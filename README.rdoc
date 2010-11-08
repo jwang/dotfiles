@@ -1,0 +1,22 @@
+= John Wang Dot Files
+
+These are config files to set up a system the way I like it.
+
+
+== Installation
+
+  git clone git://github.com/jwang/dotfiles ~/bin/dotfiles
+  cd ~/bin/dotfiles
+  
+
+
+== Environment
+
+I am running on Mac OSX. I primarily use bash, but this includes some zsh
+files as well. If you would like to switch to zsh, you can do so with 
+the following command.
+
+  chsh -s /bin/zsh
+
+
+== Features
