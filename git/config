@@ -1,0 +1,18 @@
+[user]
+	name = 
+	email = 
+[github]
+	user = 
+	token = 
+[core]
+	editor = mate -w
+	excludesfile = ~/bin/dotfiles/git/ignore
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[difftool "Kaleidoscope"]
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope

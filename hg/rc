@@ -1,0 +1,18 @@
+[extensions]
+kilnauth=/opt/kiln/kilnauth.py
+kilnpath=/opt/kiln/kilnpath.py
+svnblame=/opt/kiln/svnblame.py
+gestalt=/opt/kiln/gestalt.py
+nobranch=/opt/kiln/nobranch.py
+bigpush=/opt/kiln/big-push.py
+
+[ui]
+username = John Wang <jwang392@gmail.com>
+
+[extensions]
+hgext.fetch =
+hgext.extdiff =
+
+[extdiff]
+cmd.ksdiff = /usr/local/bin/ksdiff-wrapper
+opts.ksdiff = hg
