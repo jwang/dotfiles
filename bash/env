@@ -1,36 +1,35 @@
-
-# TextMate
-export EDITOR="mate -w"
-export PATH=$PATH:~/bin
-
-export PATH=${PATH}:/Developer/android-sk-mac/tools
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# Google Storage
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
 export PATH=${PATH}:$HOME/Library/SDKs/gsutil
-
 export JRUBY_HOME=/usr/local/jruby
-
-# Mirah Programming Language
 export MIRAH_HOME=~/opt/mirah
+export PATH=${PATH}:~/opt/android-sk-mac/tools
 export APPENGINE_JAVA_SDK=/usr/local/appengine-java-sdk
-
-# Google GO Programming Language
-export GOROOT=$HOME/go/hg
-export GOBIN=$HOME/go/bin
+export GOROOT=$HOME/opt/go
+export GOBIN=$HOME/opt/go/bin
 export GOARCH=amd64
 export GOOS=darwin
-
+export APPENGINE_GO=~/opt/google_appengine
+export ANDROID_TOOLS=~/opt/android-sdk-mac/platform-tools
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export MYSQL_HOME=/usr/local/mysql/bin
-export PATH=$PATH:$JRUBY_HOME/bin:$MIRAH_HOME/bin:$APPENGINE_JAVA_SDK/bin:$GOBIN:$MYSQL_HOME
+export PATH=$PATH:$JRUBY_HOME/bin:$MIRAH_HOME/bin:$APPENGINE_JAVA_SDK/bin:$GOBIN:$MYSQL_HOME:$APPENGINE_GO:$ANDROID_TOOLS
 
-# Amazon EC2 Command-Line Tools
+export PGDATA=/usr/local/var/postgres
+
+export TERM_EDITOR='mate -w'
+export GIT_EDITOR='mate -w'
+export GEM_OPEN_EDITOR='mate -w'
+
+# Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
 export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
 export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+
 # RVM - Ruby Version Manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Autotest
+export AUTOFEATURE=true

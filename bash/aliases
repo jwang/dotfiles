@@ -1,7 +1,18 @@
 
 # Postgres
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias pgstop-fast='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+# MongoDB
+alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf'
+
+# Google Go
+#alias go='6g'
+
+# Clang
+alias clang_gen='rm -rf /tmp/scan-build*; xcodebuild clean; /Developer/Tools/clang/scan-build --view xcodebuild'
 
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
