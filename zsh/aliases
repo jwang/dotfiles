@@ -1,0 +1,112 @@
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l logfile start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias pgstop-fast='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+# MongoDB
+alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf'
+
+# Google Go
+#alias go='6g'
+
+# Clang
+alias clang_gen='rm -rf /tmp/scan-build*; xcodebuild clean; /Developer/Tools/clang/scan-build --view xcodebuild'
+
+# Utility
+alias reload='source ~/bin/dotfiles/bash/aliases'
+alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="mate ~/bin/dotfiles/bash/env"
+
+# Quicker cd
+alias cg='cd /Library/Ruby/Gems/1.8/gems/'
+function cr() {
+ cd ~/repos/$*
+}
+
+# Common -- Some are from Damian Conway
+alias a='ls -A' # -A all except literal . ..
+alias la="ls -A -l -G"
+alias c='clear'
+alias cdd='cd -'  # goto last dir cd'ed from
+alias cl='clear; l'
+function cdc() { 
+    cd $1; ls 
+}
+alias cls='clear; ls'
+alias h='history'
+alias l.='ls -d .[^.]*'
+alias l='ls -lhGt'  # -l long listing, most recent first
+                    # -G color
+alias lh="ls -lh"
+alias ll='ls -lhG'  # -l long listing, human readable, no group info
+alias lt='ls -lt' # sort with recently modified first
+alias md='mkdir -p'
+alias s='cd ..'   # up one dir
+
+function take() { 
+    mkdir -p "$1"
+    cd "$1" 
+}
+
+alias e='exit'
+alias k9="killall -9"
+function killnamed () { 
+    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
+}
+function zipr() {
+  zip -r $1.zip $1
+}
+
+# Finder
+alias o='open . &'
+
+# Setup a tracking branch from [remote] [branch_name]
+function gbt() { 
+  git branch --track $2 $1/$2 && git checkout $2 
+}
+
+# Rails
+alias mr='mongrel_rails start'
+alias ms='mongrel_rails stop'
+alias rp='touch tmp/restart.txt'
+alias rc='rails console'
+alias rg='rails generate'
+alias rp='./script/plugin'
+alias rs='rails server'
+alias tl='tail -f log/*.log'
+alias ts='thin start'
+alias r='rake'
+alias migrate="rake db:migrate db:test:prepare"
+alias remigrate="rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare"
+alias remongrate="rake mongoid:migrate && rake mongoid:migrate:redo"
+alias s="bundle exec rspec"
+alias cuc="bundle exec cucumber"
+alias tlf="tail -f"
+alias b="bundle"
+alias be="bundle exec"
+
+# TDD / BDD
+
+alias aa='autotest'
+alias aaf='autotest -f' # Don't run all at start
+alias aas="./script/autospec"
+
+# XCode
+# Analyze release build
+alias sx="xcodebuild clean && ~/src/checker-0.146/scan-build -k -V xcodebuild"
+# Analyze test build
+alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
+# Call with -target Foo
+function sxx() { 
+  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
+}
+
+alias ox="open *.xcodeproj"
+
+# Nginx
+function nginx_stop() {
+    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
+}
+function nginx_start() {
+    sudo /opt/nginx/sbin/nginx
+}
