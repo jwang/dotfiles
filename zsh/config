@@ -104,3 +104,17 @@ export HISTSIZE=4096
 
 # look for ey config in project dirs
 export EYRC=./.eyrc
+
+# Google Go
+# gc
+prefixes=(5 6 8)
+for p in $prefixes; do
+	compctl -g "*.${p}" ${p}l
+	compctl -g "*.go" ${p}g
+done
+
+# standard go tools
+compctl -g "*.go" gofmt
+
+# gccgo
+compctl -g "*.go" gccgo
