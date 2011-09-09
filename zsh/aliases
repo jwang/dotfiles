@@ -85,6 +85,9 @@ alias tlf="tail -f"
 alias b="bundle"
 alias be="bundle exec"
 
+# Pry
+alias pr='pry -r ./config/environment'
+
 # TDD / BDD
 
 alias aa='autotest'
