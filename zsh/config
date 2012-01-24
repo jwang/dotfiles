@@ -24,7 +24,7 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails3 rvm redis-cli pow node npm textmate thor vagrant brew heroku github gem brew bundler)
+plugins=(git osx ruby rails3 rvm redis-cli pow node npm textmate thor vagrant brew heroku github gem brew thor vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +60,8 @@ setopt EXTENDED_HISTORY # add more info
 # Other tabbing options
 # setopt NO_AUTO_MENU
 # setopt BASH_AUTO_LIST
+
+setopt auto_cd
 
 #############################
 # Variables

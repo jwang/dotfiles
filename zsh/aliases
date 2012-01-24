@@ -13,9 +13,9 @@ alias mongo_start='mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mo
 alias clang_gen='rm -rf /tmp/scan-build*; xcodebuild clean; /Developer/Tools/clang/scan-build --view xcodebuild'
 
 # Utility
-alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="mate ~/bin/dotfiles/bash/env"
+alias reload='source ~/bin/dotfiles/zsh/aliases'
+alias ea='mate -w ~/bin/dotfiles/zsh/aliases && reload' # Edit aliases
+alias ee="mate ~/bin/dotfiles/zsh/env"
 
 # Quicker cd
 alias cg='cd /Library/Ruby/Gems/1.8/gems/'
@@ -90,6 +90,7 @@ alias pr='pry -r ./config/environment'
 
 # TDD / BDD
 
+alias g='guard'
 alias aa='autotest'
 alias aaf='autotest -f' # Don't run all at start
 alias aas="./script/autospec"
